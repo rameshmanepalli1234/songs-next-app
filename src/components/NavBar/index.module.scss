@@ -6,9 +6,13 @@
   flex-direction: row;
   align-items: center;
   gap: 40px;
+  //flex-wrap: wrap;
+  flex-grow: 1;
 }
 
 .navBarModulesWrapper {
+  width: 100%;
+  height: 10vh;
   color: white;
   display: flex;
   flex-direction: row;

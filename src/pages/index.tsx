@@ -15,7 +15,7 @@ const Layout = ({ children }: LayoutType) => {
   return (
       <main>
         { router.pathname !== '/' ?
-            <div>
+            <div style={{ width:'100%'}}>
                 <NavBar />
                 {children}
                 <Footer />
