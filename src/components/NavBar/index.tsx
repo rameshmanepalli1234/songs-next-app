@@ -2,10 +2,19 @@ import { NavBarModules } from "@/utility/navBarModulesData";
 import Link from "next/link";
 import classNames from "classnames";
 import styles from './index.module.scss';
-import {BiMenu} from "react-icons/bi";
+import { BiMenu } from "react-icons/bi";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 const NavBar = () => {
+    const router = useRouter();
+    const [isNavBarOpen, setIsNavBarOpen] = useState<boolean>(false);
+
+    const handleOnMenu = () => {
+        setIsNavBarOpen(!isNavBarOpen);
+    }
+
     return (
         <div className={styles.navBarWrapper}>
             <div className={styles.navBarTitleWrapper}>
@@ -13,17 +22,17 @@ const NavBar = () => {
                 <div className={classNames(styles.navBarTitle)}>YSPM Ministries</div>
             </div>
             <div className={styles.navBarModulesWrapper}>
-                {NavBarModules.map(({label, pathName, Icon}) => {
+                {NavBarModules.map(({label, pathName, Icon, id}) => {
                     return (
-                        <Link href={pathName} className={styles.navBarModuleContainer}>
-                            <Icon size={20}/>
+                        <Link href={pathName} key={id} className={router.pathname === pathName ? styles.activeLink : styles.navBarModuleContainer}>
+                            <Icon size={18}/>
                             <span className={styles.navBarItemLabel}>{label}</span>
                         </Link>
                     )
                 })}
             </div>
-            <div className={styles.mobileNavBarWrapper} style={{color:'white'}}>
-                <BiMenu size={24}/>
+            <div className={styles.menuIconContainer} onClick={handleOnMenu}>
+                <BiMenu size={24} color='white'/>
             </div>
         </div>
     )
