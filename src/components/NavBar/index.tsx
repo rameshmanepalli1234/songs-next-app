@@ -1,21 +1,29 @@
-import styles from './index.module.scss';
-import Header from "@/components/Header";
 import { NavBarModules } from "@/utility/navBarModulesData";
 import Link from "next/link";
+import classNames from "classnames";
+import styles from './index.module.scss';
+import {BiMenu} from "react-icons/bi";
+import Image from "next/image";
 
 const NavBar = () => {
     return (
         <div className={styles.navBarWrapper}>
-            <Header title='YSPM Ministries' style={{color: 'white', fontSize: '24px', fontWeight: '300', width: '20%'}} />
+            <div className={styles.navBarTitleWrapper}>
+                <Image src='/static/image/yspmLogo.png' alt='yspm logo' width={30} height={20} style={{borderRadius:'15px'}}/>
+                <div className={classNames(styles.navBarTitle)}>YSPM Ministries</div>
+            </div>
             <div className={styles.navBarModulesWrapper}>
                 {NavBarModules.map(({label, pathName, Icon}) => {
                     return (
                         <Link href={pathName} className={styles.navBarModuleContainer}>
                             <Icon size={20}/>
-                            {label}
+                            <span className={styles.navBarItemLabel}>{label}</span>
                         </Link>
                     )
                 })}
+            </div>
+            <div className={styles.mobileNavBarWrapper} style={{color:'white'}}>
+                <BiMenu size={24}/>
             </div>
         </div>
     )
