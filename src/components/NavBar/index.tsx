@@ -36,7 +36,16 @@ const NavBar = () => {
                     <BiMenu size={24} color='white'/>
                 </div>
             </div>
-            <div style={{color:'white'}} className={styles.mobileNavBarContainer}>hello</div>
+            <div className={isNavBarOpen ? styles.mobileNavBarContainer : styles.mobileNavBarContainerHide } style={{width:'100%'}}>
+                {NavBarModules.map(({label, pathName, Icon, id}) => {
+                    return (
+                        <Link href={pathName} key={id} className={router.pathname === pathName ? styles.mobileActiveLink : styles.mobileNavBarModuleContainer}>
+                            <Icon size={18}/>
+                            <span className={styles.navBarItemLabel}>{label}</span>
+                        </Link>
+                    )
+                })}
+            </div>
         </div>
     )
 }

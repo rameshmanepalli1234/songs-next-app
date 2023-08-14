@@ -1,6 +1,12 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/home": "pages/home.js"
+  "/_error": "pages/_error.js",
+  "/home": "pages/home.js",
+  "/about": "pages/about.js",
+  "/verse": "pages/verse.js",
+  "/services": "pages/services.js",
+  "/contact": "pages/contact.js",
+  "/bible": "pages/bible.js",
+  "/songs": "pages/songs.js"
 }

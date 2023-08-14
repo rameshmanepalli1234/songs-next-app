@@ -25,6 +25,16 @@
   //color: white;
 }
 
+.mobileNavBarModuleContainer {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  //margin-left: 20px;
+  width: 100%;
+}
+
 .navBarModuleContainer {
   display: flex;
   flex-direction: row;
@@ -52,7 +62,16 @@
   @extend .navBarModuleContainer;
   background-color: white;
   color: black;
+  border-radius: 15px;
+  //height: 20px;
+}
+
+.mobileActiveLink {
+  @extend .mobileNavBarModuleContainer;
+  background-color: white;
+  color: black;
   border-radius: 20px;
+  width: 100%;
 }
 
 .navBarItemLabel {
@@ -92,10 +111,24 @@
   display: none;
 }
 
+.mobileNavBarContainerHide {
+  display: none;
+}
+
 @media (max-width: 900px) {
 
+  .mobileNavBarContainerHide {
+    display: none;
+  }
+
   .mobileNavBarContainer {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    align-items: flex-start;
+    gap: 12px;
+    //align-items: center;
+    //justify-content: center;
   }
 
    .navBarModulesWrapper {
@@ -142,6 +175,10 @@
 }
 
 @media (max-width: 400px) {
+
+  .mobileNavBarContainerHide {
+    display: none;
+  }
 
   .mobileNavBarContainer {
     display: block;
@@ -194,6 +231,10 @@
 }
 
 @media (max-width: 130px) {
+
+  .mobileNavBarContainerHide {
+    display: none;
+  }
 
   .mobileNavBarContainer {
     display: block;
