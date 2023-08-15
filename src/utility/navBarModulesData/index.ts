@@ -30,19 +30,19 @@ export const NavBarModules = [
     },
     {
         label: 'Daily Verse',
-        pathName: 'verse',
+        pathName: '/verse',
         Icon: BiBook,
         id:5
     },
     {
         label: 'Bible',
-        pathName: 'bible',
+        pathName: '/bible',
         Icon: FaBible,
         id:6
     },
     {
         label: 'Contact Us',
-        pathName: 'contact',
+        pathName: '/contact',
         Icon: FaRegAddressCard,
         id:7
     }
