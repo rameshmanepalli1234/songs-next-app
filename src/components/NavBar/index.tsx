@@ -17,7 +17,7 @@ const NavBar = () => {
 
     return (
         <div className={isNavBarOpen ? styles.mobileNavBar : styles.navBarWrapper}>
-            <div style={{display:'flex',flexDirection:'row', width:'100%',justifyContent:'space-between'}}>
+            <div className={styles.navBarSubContainer}>
                 <div className={isNavBarOpen ? styles.mobileNavBarTitleWrapper : styles.navBarTitleWrapper}>
                     <Image src='/static/image/yspmLogo.png' alt='yspm logo' width={30} height={20} style={{borderRadius:'15px'}}/>
                     <div className={classNames(styles.navBarTitle)}>YSPM Ministries</div>
